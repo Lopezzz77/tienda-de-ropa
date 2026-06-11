@@ -1,19 +1,19 @@
-# Sistema de Biblias
-- Materia: Proyecto, Diseño e Implementación de sistemas Computacionales 
+# Sistema Catálogo y Sistema de Venta de Ropa
+- Materia:  Evaluación de Proyectos
 - Curso: 7°1
-- Grupo de Taller: 7.1
-- Docente: Gareis Pablo
+- Docente: Lautaro Aragón
 
-## 🌐Lenguajes de Programación
+## Lenguajes de Programación
 - Python + Django
 - HTML5
 - CSS3
 - JavaScript
 
-## ✝️Temática
-Sistema de CRUD de las biblias del mundo
+## Tematica
+Sistema CRUD de tienda de ropa urbana
 
-### Integrantes:
-- Aragon Lautaro: Encargado del BackEnd
-- Gareis Pablo: Encargado del FrontEnd
-- Lider de Equipo: Vanesa Veltri
+## Integrantes
+- Camila Soliz: Backend y Líder
+- César López: Encargado del Frontend
+- Sofía Balcazar: Documentación
+- Iván Machuca: Marketing
