@@ -1,0 +1,375 @@
+:root {
+  --bg: #0f1020;
+  --fg: #f3f0ff;
+  --card: #1a1b36;
+  --muted-fg: #a8a3c8;
+  --primary: #7ce85a;
+  --primary-fg: #0f1020;
+  --secondary: #8e3eb5;
+  --border: #2a2b4f;
+  --gradient-villain: linear-gradient(135deg, #8e3eb5, #7ce85a);
+  --shadow-villain: 0 20px 60px -10px rgba(142, 62, 181, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background: var(--gradient-villain);
+}
+
+.header-inner {
+  position: relative;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .header-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 112px 24px;
+  }
+}
+
+.badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--fg);
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+p.lead {
+  margin-top: 24px;
+  font-size: 1.125rem;
+  color: var(--muted-fg);
+  max-width: 420px;
+}
+
+.btn-group {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: var(--shadow-villain);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--fg);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: var(--card);
+}
+
+.hero-img-wrap {
+  position: relative;
+}
+
+.hero-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 24px;
+  background: var(--gradient-villain);
+  filter: blur(48px);
+  opacity: 0.5;
+}
+
+.hero-img {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  border: 4px solid var(--primary);
+  box-shadow: var(--shadow-villain);
+  display: block;
+}
+
+section {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.bio-text {
+  font-size: 1.125rem;
+  color: var(--muted-fg);
+  max-width: 768px;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  box-shadow: var(--shadow-villain);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img-wrap {
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.card-desc {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+}
+
+
+/* Contenedor Principal Estilo "Cápsula de Villano" */
+.contenedorregistro {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 5rem;
+  height: auto;
+  /* Efecto cristal traslúcido para integrarse con el fondo de la pantalla */
+  background: linear-gradient(135deg, rgba(26, 16, 46, 0.85) 0%, rgba(35, 21, 64, 0.95) 100%);
+  backdrop-filter: blur(10px);
+
+  /* El mismo borde verde neón fino y estilizado de la imagen */
+  border: 1.5px solid #63e24c;
+  border-radius: 18px;
+  /* Bordes suaves como los de la tarjeta de la derecha */
+
+  /* Sutil resplandor púrpura exterior para darle profundidad */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(155, 81, 224, 0.15);
+
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Espaciado del Logo */
+.contenedorregistro img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  border-radius: 25px;
+}
+
+/* Estructura Limpia del Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+  padding: 25px;
+}
+
+/* Campos de entrada estilizados (Django {{Formulario}}) */
+form input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  /* Fondo ultra limpio y sutil */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 50px;
+
+}
+
+form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  /* Fondo ultra limpio y sutil */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 50px;
+}
+
+/* Marcador de posición (Placeholder) en gris elegante */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Enfoque del Input: Cambia al morado de la etiqueta de la imagen */
+input:focus {
+  outline: none;
+  background: rgba(155, 81, 224, 0.1);
+  border-color: #9b51e0;
+  /* El púrpura de la etiqueta "VILLANO #1" */
+  box-shadow: 0 0 12px rgba(155, 81, 224, 0.3);
+}
+
+/* Botón de Registro - Inspirado en la etiqueta "VILLANO #1" */
+input[type="submit"] {
+  background: #9b51e0;
+  /* Púrpura corporativo de Mojo */
+  color: #ffffff;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  /* Estilo píldora idéntico al de la imagen */
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 81, 224, 0.4);
+}
+
+/* Efecto Hover del Botón: Se transforma al Verde Neón de Mojo Jojo */
+input[type="submit"]:hover {
+  background: #63e24c;
+  color: #1a102e;
+  /* Texto oscuro para máxima legibilidad */
+  box-shadow: 0 0 25px rgba(99, 226, 76, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Si Django renderiza etiquetas <label> */
+label {
+  display: block;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.4rem;
+}
