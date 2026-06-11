@@ -1,13 +1,55 @@
-{% extends "Base.html" %}
 {% load static %}
-{% block title %}Integrantes - SOHO Streetwear{% endblock %}
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
 
+<body>
+   <!-- ===== HEADER / NAV FIJA ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#" class="logo">SOHO</a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a href="{% url 'Inicio' %}" class="nav-link" data-filter-cat="all">Tienda</a>
+        <a href="#shop" class="nav-link" data-filter-cat="jackets">Abrigos</a>
+        <a href="#shop" class="nav-link" data-filter-cat="tops">Tops</a>
+        <a href="#shop" class="nav-link" data-filter-cat="pants">Pantalones</a>
+        <a href="#shop" class="nav-link" data-filter-cat="accessories">Accesorios</a>
+        <a href="{% url 'integrantes' %}" class="nav-link">Integrantes</a>
+      </nav>
+    </header>
  <section class="team" id="team">
     <h2 class="section-title">Nuestros integrantes</h2>
     <div class="team-grid">
-      <div class="team-card"><div class="team-avatar" img="avatar1.jpg"></div><h3>Cesar López</h3><p>Frontend Developer</p></div>
-      <div class="team-card"><div class="team-avatar" img="avatar2.jpg"></div><h3>Camila Soliz</h3><p>Backend Developer</p></div>
-      <div class="team-card"><div class="team-avatar" img="avatar3.jpg"></div><h3>Sofía Balcazar</h3><p>Documentación</p></div>
-      <div class="team-card"><div class="team-avatar" img="avatar4.jpg"></div><h3>Ivan Machuca</h3><p>Marketing</p></div>
+      <div class="team-card" img src="{% static 'src/fondo.png' %}"  ;>
+        <div class="team-avatar" style="background-image: url('src/avatar1.jpg');"></div>
+        <h3>Cesar López</h3>
+        <h4>Frontend Developer</h4>
+        <p>Diseño y desarrollo de la interfaz de usuario.</p>
+      </div>
+      <div class="team-card" img src="{% static 'src/fondo.png' %}"  ;>
+        <div class="team-avatar" style="background-image: url('src/avatar2.jpg');"></div>
+        <h3>Camila Soliz</h3>
+        <h4>Backend Developer</h4>
+        <p>Diseño y desarrollo de la lógica del servidor.</p>
+      </div>
+      <div class="team-card" img src="{% static 'src/fondo.png' %}"  ;>
+        <div class="team-avatar" style="background-image: url('src/avatar3.jpg');"></div>
+        <h3>Sofía Balcazar</h3>
+        <h4>Documentación</h4>
+        <p>Creación y mantenimiento de la documentación del proyecto.</p>
+      </div>
+      <div class="team-card" background-image src="{% static 'src/fondo.png' %}"  ;>
+        <div class="team-avatar" img src="{% static 'src/fondo.png' %}"  ;></div>
+        <h3>Ivan Machuca</h3>
+        <h4>Marketing</h4>
+        <p>Desarrollo y ejecución de estrategias de marketing.</p>
+      </div>
     </div>
 </section>
+</body>
