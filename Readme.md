@@ -16,7 +16,7 @@ Sistema CRUD de tienda de ropa urbana
 
 
 ## Integrantes
--Aa
+- Aa
 - Camila Soliz: Backend y Líder
 - César López: Encargado del Frontend
 - Sofía Balcazar: Documentacion
