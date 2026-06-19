@@ -1,15 +1,5 @@
-/* ====== DATOS DE PRODUCTOS ====== */
-
-const PRODUCTS = [
-  { id:1, name:"Bomber Navy", cat:"jackets", price:189, color:"navy", sizes:["S","M","L","XL"], img:"{% static 'src/jacket-navy.png' %}", badge:"Nuevo" },
-  { id:2, name:"Hoodie Teal", cat:"tops", price:89, color:"teal", sizes:["XS","S","M","L"], img:"{% static 'src/hoodie-teal.png' %}", badge:"" },
-  { id:3, name:"Tee Sand", cat:"tops", price:39, color:"sand", sizes:["S","M","L","XL"], img:"{% static 'src/tee-sand.png' %}", badge:"" },
-  { id:4, name:"Cargo Navy", cat:"pants", price:119, color:"navy", sizes:["S","M","L"], img:"{% static 'src/pants-navy.png' %}", badge:"Top" },
-  { id:5, name:"Cap Gold", cat:"accessories", price:35, color:"gold", sizes:["M"], img:"{% static 'src/cap-gold.png' %}", badge:"" },
-  { id:6, name:"Sneakers Aqua", cat:"shoes", price:149, color:"aqua", sizes:["S","M","L","XL"], img:"{% static 'src/sneakers-aqua.png' %}", badge:"Nuevo" },
-  { id:7, name:"Overcoat Teal", cat:"jackets", price:259, color:"teal", sizes:["M","L","XL"], img:"{% static 'src/coat-teal.png' %}", badge:"" },
-  { id:8, name:"Hoodie Sand", cat:"tops", price:79, color:"sand", sizes:["XS","S","M"], img:"{% static 'src/hoodie-sand.png' %}", badge:"" },
-];
+/* ====== DATOS DE PRODUCTOS (cargados desde HTML) ====== */
+const PRODUCTS = JSON.parse(document.getElementById("products-data").textContent);
 
 /* ====== ESTADO DE FILTROS ====== */
 const state = { category:"all", size:null, color:null, maxPrice:300, search:"", sort:"featured" };

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-
-{% load static %}
 <html lang="es" class="bg-sand">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOHO — Streetwear Store</title>
-  <meta name="description" content="Tienda de ropa urbana. Encuentra tu estilo." />
+  <meta name="description" content="Tienda de ropa urbana. Filtros, buscador y carrito para encontrar tu estilo." />
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-  <!-- ===== HEADER fce   NAV FIJA ===== -->
-
+  <!-- ===== HEADER / NAV FIJA ===== -->
   <header class="header" id="header">
     <div class="header-inner">
       <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -21,15 +18,16 @@
       <a href="#" class="logo">SOHO</a>
 
       <nav class="nav" id="nav" aria-label="Navegación principal">
-        <a href="{% url 'Inicio' %}" class="nav-link" data-filter-cat="all">Tienda</a>
+        <a href="#shop" class="nav-link" data-filter-cat="all">Tienda</a>
         <a href="#shop" class="nav-link" data-filter-cat="jackets">Abrigos</a>
         <a href="#shop" class="nav-link" data-filter-cat="tops">Tops</a>
         <a href="#shop" class="nav-link" data-filter-cat="pants">Pantalones</a>
         <a href="#shop" class="nav-link" data-filter-cat="accessories">Accesorios</a>
-        <a href="{% url 'integrantes' %}" class="nav-link">Integrantes</a>
+        <a href="#team" class="nav-link">Integrantes</a>
       </nav>
 
       <div class="header-actions">
+        
         <!-- Buscador -->
         <div class="search" id="search">
           <button class="icon-btn search-toggle" id="searchToggle" aria-label="Buscar">
@@ -38,7 +36,7 @@
           <input type="search" id="searchInput" class="search-input" placeholder="Buscar prendas..." aria-label="Buscar productos" />
         </div>
 
-        <!-- Carritooo -->
+        <!-- Carrito -->
         <button class="icon-btn cart-toggle" id="cartToggle" aria-label="Abrir carrito">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           <span class="cart-count" id="cartCount">0</span>
@@ -47,11 +45,9 @@
     </div>
   </header>
 
-
   <!-- ===== HERO ===== -->
-
   <section class="hero">
-    <img src="{% static 'src/hero.png' %}" alt="Modelos con ropa urbana de la nueva colección" class="hero-img" />
+    <img src="{% static 'images/hero.png' %}" alt="Modelos con ropa urbana de la nueva colección" class="hero-img" />
     <div class="hero-content">
       <p class="hero-kicker">Nueva colección · 2026</p>
       <h1 class="hero-title">Define tu calle.<br />Define tu estilo.</h1>
@@ -59,9 +55,7 @@
     </div>
   </section>
 
-  
   <!-- ===== ACCESOS RÁPIDOS ===== -->
-
   <section class="quick-cats" aria-label="Categorías destacadas">
     <button class="quick-cat" data-filter-cat="jackets">Abrigos</button>
     <button class="quick-cat" data-filter-cat="tops">Tops</button>
@@ -119,7 +113,7 @@
           <input type="range" id="priceRange" min="20" max="300" value="300" step="10" class="price-range" />
         </div>
 
-        <button class="btn btn-outline clear-filters" id="clearFilters">Limpiar filtros</button>
+        <button class="btn btn-outline clear-filters" id="clearFilters">Limpiar Filtros</button>
       </aside>
 
       <!-- PRODUCTOS -->
@@ -140,7 +134,16 @@
     </div>
   </main>
 
-  
+  <!-- ===== INTEGRANTES ===== -->
+  <section class="team" id="team">
+    <h2 class="section-title">Nuestros integrantes</h2>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-avatar">A</div><h3>Ana López</h3><p>Dirección creativa</p></div>
+      <div class="team-card"><div class="team-avatar">M</div><h3>Marco Díaz</h3><p>Diseño de producto</p></div>
+      <div class="team-card"><div class="team-avatar">S</div><h3>Sofía Ruiz</h3><p>Marketing</p></div>
+    </div>
+  </section>
+
   <footer class="footer">
     <p>SOHO Streetwear · © 2026 · Hecho con identidad urbana.</p>
   </footer>
@@ -158,21 +161,6 @@
       <button class="btn btn-primary full" id="checkoutBtn">Finalizar compra</button>
     </div>
   </aside>
-<!-- ===== DATOS DE PRODUCTOS (imgs resueltas por Django) ===== -->
-<script id="products-data" type="application/json">
-[
-  {"id":1,"name":"Bomber Navy","cat":"jackets","price":189,"color":"navy","sizes":["S","M","L","XL"],"img":"{% static 'src/jacket-navy.png' %}","badge":"Nuevo"},
-  {"id":2,"name":"Hoodie Teal","cat":"tops","price":89,"color":"teal","sizes":["XS","S","M","L"],"img":"{% static 'src/hoodie-teal.png' %}","badge":""},
-  {"id":3,"name":"Tee Sand","cat":"tops","price":39,"color":"sand","sizes":["S","M","L","XL"],"img":"{% static 'src/tee-sand.png' %}","badge":""},
-  {"id":4,"name":"Cargo Navy","cat":"pants","price":119,"color":"navy","sizes":["S","M","L"],"img":"{% static 'src/pants-navy.png' %}","badge":"Top"},
-  {"id":5,"name":"Cap Gold","cat":"accessories","price":35,"color":"gold","sizes":["M"],"img":"{% static 'src/cap-gold.png' %}","badge":""},
-  {"id":6,"name":"Sneakers Aqua","cat":"shoes","price":149,"color":"aqua","sizes":["S","M","L","XL"],"img":"{% static 'src/sneakers-aqua.png' %}","badge":"Nuevo"},
-  {"id":7,"name":"Overcoat Teal","cat":"jackets","price":259,"color":"teal","sizes":["M","L","XL"],"img":"{% static 'src/coat-teal.png' %}","badge":""},
-  {"id":8,"name":"Hoodie Sand","cat":"tops","price":79,"color":"sand","sizes":["XS","S","M"],"img":"{% static 'src/hoodie-sand.png' %}","badge":""}
-]
-</script>
-
-
 
   <script src="{% static 'scripts/script.js' %}"></script>
 </body>
