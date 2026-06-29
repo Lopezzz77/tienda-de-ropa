@@ -5,8 +5,8 @@ class Prenda(models.Model):
     id_prenda=models.AutoField(primary_key=True)
     Talle=models.TextField(max_length=3)
     Categoria=models.TextField(max_length=35)
-    Nombre=models.TextField(max_length=35)
-    Edad=models.IntegerField()
+    Descripcion=models.TextField(max_length=200)
+    Precio=models.FloatField()
     Calle=models.TextField(max_length=50)
     Altura=models.IntegerField()
 
